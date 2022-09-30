@@ -8,10 +8,12 @@ function fetchMovies(query) {
             if (response.ok) {
                 return response.json();
             }
-            return Promise.reject(new Error('The API_KEY is wrong'));
+
+            return Promise.reject(new Error(`The ${API_KEY} is wrong`))
         })
-    );
-};
+    )
+}
+
 
 function fetchTrending() {
     return (
@@ -21,51 +23,54 @@ function fetchTrending() {
                 return response.json();
             }
 
-            return Promise.reject(new Error('The API_KEY is wrong'))
+            return Promise.reject(new Error(`The ${API_KEY} is wrong`))
         })
     );
 };
 
 function fetchMovieDetalis(movieId) {
 
-    return (
+        return (
         fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
         .then(response => {
             if (response.ok) {
                 return response.json();
             }
 
-            return Promise.reject(new Error('The API_KEY is wrong'))
+            return Promise.reject(new Error(`The ${API_KEY} is wrong`))
         })
     );
+
 };
 
 function fetchCast(movieId) {
 
-    return (
+        return (
         fetch(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
         .then(response => {
             if (response.ok) {
                 return response.json();
             }
 
-            return Promise.reject(new Error('The API_KEY is wrong'))
+            return Promise.reject(new Error(`The ${API_KEY} is wrong`))
         })
     );
+
 };
 
 function fetchReviews(movieId) {
 
-    return (
+        return (
         fetch(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`)
         .then(response => {
             if (response.ok) {
                 return response.json();
             }
 
-            return Promise.reject(new Error('The API_KEY is wrong'))
+            return Promise.reject(new Error(`The ${API_KEY} is wrong`))
         })
     );
+
 };
 
 const api = {
@@ -77,3 +82,6 @@ const api = {
 };
 
 export default api;
+
+
+
