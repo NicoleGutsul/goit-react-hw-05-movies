@@ -12,3 +12,16 @@ function fetchMovies(query) {
         })
     );
 };
+
+function fetchTrending() {
+    return (
+        fetch(`${BASE_URL}/trending/all/day?api_key=${API_KEY}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+
+            return Promise.reject(new Error(`Не верный ${API_KEY}`))
+        })
+    );
+};
