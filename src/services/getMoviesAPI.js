@@ -29,14 +29,27 @@ function fetchTrending() {
 function fetchMovieDetalis(movieId) {
 
     return (
-    fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
+        fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
 
-        return Promise.reject(new Error('The API_KEY is wrong'))
-    })
-)
+            return Promise.reject(new Error('The API_KEY is wrong'))
+        })
+    );
+};
 
-}
+function fetchCast(movieId) {
+
+    return (
+        fetch(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+
+            return Promise.reject(new Error('The API_KEY is wrong'))
+        })
+    );
+};
