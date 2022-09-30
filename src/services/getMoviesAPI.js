@@ -67,3 +67,13 @@ function fetchReviews(movieId) {
         })
     );
 };
+
+const api = {
+    fetchMovies,
+    fetchTrending,
+    fetchMovieDetalis,
+    fetchCast,
+    fetchReviews,
+};
+
+export default api;
