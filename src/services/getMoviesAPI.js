@@ -53,3 +53,17 @@ function fetchCast(movieId) {
         })
     );
 };
+
+function fetchReviews(movieId) {
+
+    return (
+        fetch(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+
+            return Promise.reject(new Error('The API_KEY is wrong'))
+        })
+    );
+};
