@@ -21,7 +21,22 @@ function fetchTrending() {
                 return response.json();
             }
 
-            return Promise.reject(new Error(`Не верный ${API_KEY}`))
+            return Promise.reject(new Error('The API_KEY is wrong'))
         })
     );
 };
+
+function fetchMovieDetalis(movieId) {
+
+    return (
+    fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+
+        return Promise.reject(new Error('The API_KEY is wrong'))
+    })
+)
+
+}
