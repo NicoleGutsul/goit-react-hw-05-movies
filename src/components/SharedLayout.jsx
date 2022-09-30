@@ -15,7 +15,7 @@ const StyledLink = styled(NavLink)`
 export const SharedLayout = () => {
     return (
         <Box pb="10px" as="nav">
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/" end>Home</StyledLink>
             <StyledLink to="/movies">Movies</StyledLink>
 
             <Suspense fallback={<div>Loading page...</div>}>
