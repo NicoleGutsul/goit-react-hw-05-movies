@@ -3,7 +3,6 @@ export const SearchBox = ({onSearch}) => {
         evt.preventDefault();
 
         const search = evt.currentTarget.elements.query.value;
-        console.log(search)
 
         if (search.trim() === '') {
             alert('Please enter a valid name');

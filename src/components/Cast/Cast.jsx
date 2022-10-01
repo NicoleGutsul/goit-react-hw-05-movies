@@ -13,7 +13,6 @@ const Cast = () => {
     if (!cast) {
         return null;
     }
-    console.log(cast);
 
     return (
         <div>

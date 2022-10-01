@@ -25,7 +25,6 @@ const MovieDetails = () => {
     return (
         <div>
             <BackLink to={backLinkHref}>Go back</BackLink>
-            {/* MovieDetails Now showing product with id - {movieId} */}
             <Box display="flex" as="article">
                 
                 <Box maxWidth="40%" >
