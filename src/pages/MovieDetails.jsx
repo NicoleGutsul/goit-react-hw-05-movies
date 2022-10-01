@@ -27,19 +27,19 @@ const MovieDetails = () => {
             <BackLink to={backLinkHref}>Go back</BackLink>
             <Box display="flex" as="article">
                 
-                <Box maxWidth="40%" >
-                        {<img src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt="" />}
+                <Box width="400px" >
+                        {<img src={`https://image.tmdb.org/t/p/w400/${backdrop_path}`} alt={original_title} />}
                 </Box>
 
-                <Box maxWidth="60%" >
-                    <h3>{original_title}</h3>
+                <Box maxWidth="50%" ml='10px' >
+                    <h2>{original_title}</h2>
                     <p>User score: {popularity}%</p>
-                    <h4>Overview</h4>
+                    <h2>Overview</h2>
                     <p>{overview}</p>
-                    <h5>Genres</h5>
-                    <Box as="ul" display="flex">
-                        {genres.map(({id, name}) => <Box as="li" mr="10px" key={id}> {name} </Box>)}
-                    </Box>
+                    <h2>Genres</h2>
+                    {/* <Box as="div" display="flex" flex-direction="column"> */}
+                        {genres.map(({id, name}) => <p key={id}>{name}</p>)}
+                    {/* </Box> */}
                 </Box>
                     
             </Box>
