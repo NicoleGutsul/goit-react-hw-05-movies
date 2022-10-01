@@ -23,7 +23,7 @@ const Reviews = () => {
                     <li key={id}>
                         <h4>{author}</h4> 
                         <p>{content}</p>
-                    </li>))  : (<p> No reviews</p>) }
+                    </li>))  : (<p> Sorry, reviews not found </p>) }
 
              </ul>
        </div> 

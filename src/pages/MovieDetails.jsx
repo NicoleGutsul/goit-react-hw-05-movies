@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Box } from "components/Box";
+import { BackLink } from "components/BackLink/BackLink";
 
 import api from "services/getMoviesAPI";
 
@@ -23,7 +24,7 @@ const MovieDetails = () => {
 
     return (
         <div>
-            <h3><Link to={backLinkHref}>Go back</Link></h3>
+            <BackLink to={backLinkHref}>Go back</BackLink>
             {/* MovieDetails Now showing product with id - {movieId} */}
             <Box display="flex" as="article">
                 
