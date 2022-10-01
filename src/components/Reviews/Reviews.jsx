@@ -18,11 +18,12 @@ const Reviews = () => {
     return (
         <div>
             <ul>
-                {reviews && reviews.results.map(({ id, author, content }) =>
-                <li key={id}>
-                    <h4>{author}</h4> 
-                    <p>{content}</p>
-                </li>)}
+                {reviews && reviews.length > 0 ?
+                    (reviews.results.map(({ id, author, content }) =>
+                    <li key={id}>
+                        <h4>{author}</h4> 
+                        <p>{content}</p>
+                    </li>))  : (<p> No reviews</p>) }
 
              </ul>
        </div> 
